@@ -33,11 +33,14 @@
   --raisin-black_a6: hsla(216, 14%, 14%, 0.06);
   --gunmetal: hsla(214, 15%, 21%, 1);
   --charcoal: hsla(219, 22%, 26%, 1);
-
+  
   /**
-   * typography
-   */
+  * typography
+  */
 
+  --blob-radius: 52% 48% 59% 41% / 53% 40% 60% 47%;
+  --z-tooltip: 10;
+  
   --ff-manrope: 'Manrope', sans-serif;
 
   --fs-1: calc(2.7rem + 1.38vw);
@@ -380,13 +383,7 @@ body.nav-active { overflow: hidden; }
 .hero-banner .w-100 {
   mask-image: url("../images/Blob.svg");
   /* -webkit-mask-image: url("../images/Blog.svg"); */
-  border-radius: 100%;
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-position: center;
-  mask-size: auto;
-  -webkit-mask-size: auto;
+  border-radius: var(--blob-radius);
 }
 
 .hero .shape {
@@ -562,26 +559,43 @@ textarea.input-field {
 
 
 /*-----------------------------------*\
+  #SCROLL UP
+\*-----------------------------------*/
+
+.scrollup {
+  position: fixed;
+  right: 3rem;
+  bottom: -30%;
+  background-color: white;
+  box-shadow: 0 4px 12px hsla(0, 0%, 20%, .8);
+  display: inline-flex;
+  padding: 1rem;
+  z-index: var(--z-tooltip);
+  opacity: .8;
+  transition: .4s;
+  border-radius: 5px;
+}
+
+.scrollup:hover {
+  opacity: 1;
+}
+
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: var(--cinnamon-satin);
+}
+
+.show-scroll {
+  bottom: 3rem;
+}
+
+
+
+/*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
 
-/**
- * responsive for large than 450px screen
- */
-
-@media (min-width: 450px) {
-  .footer {
-    text-align: center;
-    align-items: center;
-  }
-
-  .social-list {
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-/**
+/*
  * responsive for large than 575px screen
  */
 
