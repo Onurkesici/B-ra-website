@@ -506,15 +506,15 @@
 
             </div>
 
-            <form action="https://formspree.io/f/xpznvolw" method="POST" class="contact-form" data-reveal="right">
+            <form class="contact-form" data-reveal="right" onsubmit="sendEmail(); reset(); return false;">
 
               <div class="input-wrapper">
-                <input type="text" name="name" placeholder="Name" required class="input-field">
+                <input id="name" type="text" name="name" placeholder="Name" required class="input-field">
 
-                <input type="email" name="email_address" placeholder="Email" required class="input-field">
+                <input id="email" type="email" name="email_address" placeholder="Email" required class="input-field">
               </div>
 
-              <textarea name="message" placeholder="Message" required class="input-field"></textarea>
+              <textarea id="message" name="message" placeholder="Message" required class="input-field"></textarea>
 
               <button type="submit" class="btn btn-secondary">Send message</button>
 
@@ -593,6 +593,7 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 
 </html>

@@ -84,3 +84,24 @@ const scrollUp = () => {
     : scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
+
+
+
+/**
+ * GMAİL
+ */
+
+function sendEmail() {
+
+  Email.send({
+    SecureToken: "1a5ab0e2-f26d-4394-b025-82655b41378e",
+    To: 'onurkesici0@gmail.com',
+    From: document.getElementById("email").value,
+    Subject: "New Contact Form Enquiry",
+    Body: "Name: " + document.getElementById("name").value
+          + "<br /> Email: " + document.getElementById("email").value
+          + "<br /> Message: " + document.getElementById("message").value
+  }).then(
+    message => alert("Message Sent Succesfully")
+  );
+}
