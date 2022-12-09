@@ -566,6 +566,22 @@ textarea.input-field {
 \*-----------------------------------*/
 
 /**
+ * responsive for large than 450px screen
+ */
+
+@media (min-width: 450px) {
+  .footer {
+    text-align: center;
+    align-items: center;
+  }
+
+  .social-list {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/**
  * responsive for large than 575px screen
  */
 
